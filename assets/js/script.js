@@ -6,18 +6,33 @@ console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
 // times are from 9-5( 8 time blocks)
 let dt = moment();
 dt.format("HH:mm");
-var line = document.getElementsByClassName("row")
+var line = ["9", "10", "11", "12", "13", "14", "15", "16"]
+console.log(line)
+
+
+
 for (let i = 0; i < line.length; i++) {
-    if (line[i].getAttribute("id") === moment().hours()) {
-        (line.childNodes[1].classList.add('bg-danger'))
-    } else if (((line[i].getAttribute("id") < dt.hours()))) {
-        ((line.childNodes[i].classList.add("bg-secondary")))
-
+    var id = "#" + line[i]
+var storage = localStorage.getItem(line[i])
+   $(id).children(".col-10").children("textarea").val(storage);
+        if (line[i] == moment().hours()) {
+      $(id).addClass('present')
+        } else if(line[i] < moment().hours()) {
+            $(id).addClass("past")
         }
-        else {
-
-            (line.childNodes[i].classList.add("bg-success"));
+    
+    
+     else {
+        $(id).addClass("future")
         }
     };
-    // tabs on side
-   // (line.childNodes[i].childNodes[0].classList.add())
+$(".saveBtn").on("click", function() {
+ var data=$(this).parent().siblings(".col-10").children("textarea").val();
+    var hour=$(this).parent().parent().attr("id")
+    localStorage.setItem(hour, data);
+})
+
+
+
+
+//getParent go to sibling grab textarea
