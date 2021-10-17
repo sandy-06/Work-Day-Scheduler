@@ -18,4 +18,7 @@ WHEN I click the save button for that timeblock
 THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
-git 
+
+Usage:
+![alt](assets/images/Screenshot172719.png);
+![alt](assets/images/Screenshot173016.png);
