@@ -24,3 +24,7 @@ Usage:
 ![alt](assets/images/Screenshot173016.png);
 
 https://github.com/sandy-06/Work-Day-Scheduler
+
+deployed:https://sandy-06.github.io/Work-Day-Scheduler/
+
+Sandra Sanders
